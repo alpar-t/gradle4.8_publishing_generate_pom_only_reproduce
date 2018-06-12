@@ -1,5 +1,7 @@
 # gradle4.8_publishing_generate_pom_only_reproduce
 
+Reproduce gradle/gradle#5696 
+
 Generating the POM for publishing doesn't work as documented in neither Gradle 4.7 nor 4.8. 
 The task is probably created late. 
 With Gradle 4.8 using `tasks.withType` no longer works either. It seems there's no way to configure
