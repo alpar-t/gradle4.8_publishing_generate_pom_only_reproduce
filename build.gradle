@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: 'maven-publish'
+
+version = '0.0.1'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+// Example from https://docs.gradle.org/4.8/userguide/publishing_maven.html
+// does not work.
+//generaatePomFileForMavenJavaPublication {
+//    destination = file("$buildDir/test.pom")
+//}
+
+// Works in Gradle 4.7 , no longer in 4.8
+tasks.withType(GenerateMavenPom.class) {
+    destination = file("$buildDir/test.pom")
+}
