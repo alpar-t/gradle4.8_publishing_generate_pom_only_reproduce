@@ -1,0 +1,1 @@
+# gradle4.8_publishing_generate_pom_only_reproduce
