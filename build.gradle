@@ -12,12 +12,12 @@ publishing {
 }
 
 // Example from https://docs.gradle.org/4.8/userguide/publishing_maven.html
-// does not work.
-//generaatePomFileForMavenJavaPublication {
+// only  works with enableFeaturePreview('STABLE_PUBLISHING')
+//generatePomFileForMavenJavaPublication {
 //    destination = file("$buildDir/test.pom")
 //}
 
 // Works in Gradle 4.7 , no longer in 4.8
 tasks.withType(GenerateMavenPom.class) {
-    destination = file("$buildDir/test.pom")
+   destination = file("$buildDir/test.pom")
 }
